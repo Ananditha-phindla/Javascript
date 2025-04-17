@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function INR(amount){
+            let a = amount.toString();
+            console.log(a);
+            let n = a.length;
+            console.log(a.length);
+            let i = n-1;
+            let c = 0;
+            let sAfterpoint = '';
+            while(a[i] != '.' &&  i != -1){
+                sAfterpoint = a[i] + sAfterpoint;
+                i = i - 1;
+                c++;
+            }
+            if(i != -1)
+                a = a.slice(0,i);
+            let res = '';
+            if(i != -1)
+                n = n - c - 1;
+            if(n <= 3){
+                console.log(a);
+                return;
+            }
+            res += a.slice(n-3,n);
+            res = ',' + res;
+            let cnt = 0;
+            for(let i=n-4;i>=0;i--){
+                cnt++;
+                res = a[i] + res;
+                if(cnt % 2 == 0){
+                    res = ',' + res;
+                }
+            }
+            if(i != -1)
+                console.log(res + '.' + sAfterpoint);
+            else
+                console.log(res);
+        }
+        function USDOREUR(amount){
+            let a = amount.toString();
+            let n = a.length;
+            let res = '';
+            let i = n-1;
+            let c = 0;
+            let sAfterpoint = '';
+            while(a[i] != '.' &&  i != -1){
+                sAfterpoint = a[i] + sAfterpoint;
+                i = i - 1;
+                c++;
+            }
+            if(i != -1)
+                a = a.slice(0,i);
+            if(i != -1)
+                n = n - c - 1;
+            if(n <= 3){
+                console.log(a);
+                return;
+            }
+            res += a.slice(n-3,n);
+            res = ',' + res;
+            let cnt = 0;
+            for(let i=n-4;i>=0;i--){
+                cnt++;
+                res = a[i] + res;
+                if(cnt % 3 == 0){
+                    res = ',' + res;
+                }
+            }
+            if(n%3 == 0){
+                res = res.slice(1);
+            }
+            if(i != -1)
+                console.log(res + '.' + sAfterpoint);
+            else
+                console.log(res);
+        }
+        function formatCurrency(amount,currencyCode){
+            if(currencyCode == "INR")
+                 INR(amount);
+            else if(currencyCode == "USD" || currencyCode == "EUR")  
+                USDOREUR(amount);
+        }
+        formatCurrency(150000.00,"INR");
+        formatCurrency(150000.00,"USD");
+    </script>
+</body>
+</html>
