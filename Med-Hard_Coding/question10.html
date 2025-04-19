@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            function processTransactions(transactions){
+                let balance = 0;
+                const obj = {
+                    finalbalance : 0,
+                    depositAmount : 0,
+                    withDrawalAMount : 0
+                }
+                for(let t of transactions){
+                    if(t.type == "deposit"){
+                        obj.finalbalance += t.amount;
+                        obj.depositAmount += t.amount;
+                    }
+                    else{
+                        obj.finalbalance -= t.amount;
+                        obj.withDrawalAMount += t.amount;
+                    }
+                }
+                return obj;
+            }
+            let transactions = [{type : "deposit",amount : 5000},{type : "withdrawal",amount : 2000},{type : "deposit",amount : 7000},{type : "withdrawal",amount : 5000}];
+            console.log(processTransactions(transactions));
+    </script>
+</body>
+</html>

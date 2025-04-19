@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+  <h1>My List</h1>
+  <ul id="myList">
+  </ul>
+  <button id="addButton">Add Item</button>
+</div>
+    <script>
+        let cnt = 1;
+        const button = document.getElementById("addButton");
+        const list = document.getElementById("myList");
+        button.addEventListener("click" ,()=>{
+          const newele = document.createElement("li");
+          newele.innerText = `item ${cnt}`;
+          cnt++;
+          newele.setAttribute("class","item");
+          list.append(newele);
+          newele.addEventListener("click",()=>{
+            list.removeChild(newele);
+          });
+        });
+
+    </script>
+</body>
+</html>

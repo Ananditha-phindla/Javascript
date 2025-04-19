@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick = "Increment()">Increment</button>
+    <button onclick = "decrement()">Decrement</button>
+    <p class = "para">The value is 0</p>
+    <script>
+        let cnt = 0;
+        let p = document.querySelector(".para");
+        function Increment(){
+            cnt++;
+            p.innerText = `the value is ${cnt}`;
+        }
+        function decrement(){
+            if(cnt != 0)
+                cnt--;
+            p.innerText = `the value is ${cnt}`;
+        }
+    </script>
+</body>
+</html>
