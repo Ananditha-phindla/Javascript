@@ -8,7 +8,6 @@
 <body>
     <script>
             function processTransactions(transactions){
-                let balance = 0;
                 const obj = {
                     finalbalance : 0,
                     depositAmount : 0,
@@ -26,6 +25,7 @@
                 }
                 return obj;
             }
+            
             let transactions = [{type : "deposit",amount : 5000},{type : "withdrawal",amount : 2000},{type : "deposit",amount : 7000},{type : "withdrawal",amount : 5000}];
             console.log(processTransactions(transactions));
     </script>
