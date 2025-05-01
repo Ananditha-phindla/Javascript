@@ -23,7 +23,7 @@ function setupCounter(initialValue) {
 /* 
    Task-1:
     closures : it is a feature in javascript where an inner function has access to the outer function variables,even after the outer function has finished executing
-    counterOne and counterTwo has two separate memory locations,they have the specific count variable 
+    counterOne and counterTwo has two separate memory locations,they have the specific count variable
  */
 
  // Task-2
