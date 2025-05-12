@@ -1,6 +1,29 @@
+body{
+    margin-left:20px;
+}
+
 .todo-list{
     display: grid;
     grid-template-columns: 200px 150px 100px;
     column-gap: 10px;
     row-gap: 10px;
+    font-size:20px;
+    align-items: center;
+}
+
+input {
+    font-size:16px;
+    padding : 5px 10px;
+}
+
+button{
+    background-color: forestgreen;
+    color : white;
+    font-size:16px;
+    border : none;
+    height: 35px;
+}
+
+.deletebutton{
+    background-color: rgb(195, 5, 5);
 }
